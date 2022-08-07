@@ -186,6 +186,7 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+  z-index: 2;
 }
 
 label {
@@ -527,3 +528,20 @@ footer {
   }
 }
 
+/*Message de confirmation du traitement du formulaire*/
+
+.messagevalidation{
+  z-index: 1;
+  position: absolute;
+  transform: translate(455px,70px);
+  align-items: center;
+  max-width: 500px;
+  height:785px;
+  background-color: #232323;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  display:none;
+}
