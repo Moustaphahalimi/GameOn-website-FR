@@ -8,11 +8,12 @@ function editNav() {
 }
 
 // DOM Elements
-const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
+const modalbg = document.querySelector(".bground")
+const modalBtn = document.querySelectorAll(".modal-btn")
+const formData = document.querySelectorAll(".formData")
 const btnCloseModal = document.querySelector(".close")
 const messageValidation = document.querySelector(".messagevalidation")
+const closeConfirmation = document.getElementById('closeConfirmation')
 
 //input
 const firstName = document.getElementById("first")
@@ -21,6 +22,8 @@ const email = document.getElementById("email")
 const birthdate = document.getElementById("birthdate")
 const nbOfTournement = document.getElementById("quantity")
 const loc = document.getElementsByName("location")
+const alllocation = document.querySelector('.alllocation')
+const checkbox2_label = document.querySelector('checkbox2-label')
 const checkbox1 =document.getElementById("checkbox1")
 const formulaire = document.getElementById("formulaire")
 // Error
@@ -29,10 +32,10 @@ var err_lastName = document.getElementById("err_lastName")
 var err_email = document.getElementById("err_email")
 var err_birthdate = document.getElementById("err_birthdate")
 var err_nbOfTournement = document.getElementById("err_quantity")
-var err_checkbox1 = document.getElementById("err_checkbox2")
+var err_checkbox1 = document.getElementById("err_checkbox1")
 var err_location= document.getElementById("err_location")
 var regexEmail = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
-
+var regexBirthdate = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -48,92 +51,136 @@ btnCloseModal.addEventListener("click", function(){
 })
 
 
-let formValide = false
+
+
 
 formulaire.addEventListener("submit", function (event) {
+  let formValide = true
+  event.preventDefault();
   if (firstName.value === "" || firstName.value.length < 2 ) {
-    console.log("Remplir votre prénom avec 2 lettres minimums")
-    err_firstName.innerHTML = "Remplir votre prénom avec 2 lettres minimums";
+    err_firstName.style.display= "block"
+    err_firstName.innerHTML = "Veuillez Remplir votre prénom avec 2 lettres minimums";
     err_firstName.style.fontSize= "12px"
-    err_firstName.style.backgroundColor= "red"
+    err_firstName.style.color= "red"
+    firstName.style.border = "3px red solid"
+    formValide = false
     event.preventDefault();
-    return formValide === false
   } 
   else{
     err_firstName.style.display= "none"
+    firstName.style.border = "3px green solid"
   }
+  
  
   if (lastName.value === "" || lastName.value.length < 2 ) {
-    console.log("Remplir votre nom avec 2 lettres minimums")
-    err_lastName.innerHTML = "Remplir votre nom avec 2 lettres minimums";
+    err_lastName.style.display= "block"
+    err_lastName.innerHTML = "Veuillez Remplir votre nom avec 2 lettres minimums";
     err_lastName.style.fontSize= "12px"
     err_lastName.style.color= "red"
+    lastName.style.border= "red 3px solid"
+    formValide = false
     event.preventDefault();
-    return formValide === false
+    
   }
   else{
     err_lastName.style.display= "none"
+    lastName.style.border= "green 3px solid"
+
   }
+
+  
   
   if (regexEmail.test(email.value) == false){
-    console.log("Entrez une adresse mail correct")
-    err_email.innerHTML = "Entrez une adresse mail correct";
+    err_email.style.display= "block"
+    err_email.innerHTML = "Veuillez Entrez une adresse mail correct";
     err_email.style.fontSize= "12px"
     err_email.style.color= "red"
-    valide = false
+    email.style.border= "red 3px solid"
+    formValide = false
     event.preventDefault();
-    return formValide === false
+    
   }
   else{
     err_email.style.display= "none"
+    email.style.border= "green 3px solid"
+  }
+
+
+  if (!regexBirthdate.test(birthdate.value)) {
+    err_birthdate.style.display = "block"
+    err_birthdate.innerHTML = "Veuillez entrez une date de naissance valide"
+    birthdate.style.border = "red 3px solid"
+    err_birthdate.style.color= "red"
+    err_birthdate.style.fontSize= "12px"
+    formValide = false
+    event.preventDefault();
+
+
+  }
+  else{
+    birthdate.style.border = "green 3px solid"
+    err_birthdate.style.display = "none"
   }
 
   if(nbOfTournement.value <= 0 || nbOfTournement>=100){
+    err_nbOfTournement.style.display= "block"
     err_nbOfTournement.innerHTML = "Veuillez renseigner quelque chose"
     err_nbOfTournement.style.fontSize= "12px"
     err_nbOfTournement.style.color= "red" 
+    nbOfTournement.style.border= "red 3px solid" 
+    formValide = false
     event.preventDefault();
-    return formValide === false
+    
   }
   else{
     err_nbOfTournement.style.display= "none"
+    nbOfTournement.style.border= "green 3px solid" 
+
   }
 
+
   if( !(loc[0].checked || loc[1].checked || loc[2].checked || loc[3].checked || loc[4].checked || loc[5].checked) ){
-    console.log("Veuillez selectionné une ville");
+    err_location.style.display= "block"
     err_location.innerHTML= "Veuillez selectionné une ville"
     err_location.style.fontSize= "12px"
     err_location.style.color= "red"
+    alllocation.style.border= "red 3px solid"
+    formValide = false
     event.preventDefault();
-    return formValide === false
+    
   }
   else{
     err_location.style.display= "none"
+    alllocation.style.border= "green 3px solid"
+
   }
 
+
   if(!checkbox1.checked){
+    err_checkbox1.style.display= "block"
     err_checkbox1.innerHTML="Veuillez acceptez les conditions d'utilisations."
     err_checkbox1.style.fontSize= "12px"
     err_checkbox1.style.color= "red"
+    formValide = false
     event.preventDefault();
-    return formValide === false
+   
   }
   else{
     err_checkbox1.style.display= "none"
+    checkbox1.style.border= "green 3px solid"
+
   }
-  
-  return formValide = true
- 
+
+
+  if(formValide == true){ 
+  messageValidation.style.display = "block"
+  modalbg.style.display = 'none'}
+   
 });
 
-
-function validate (){
-
-  if (formValide === true){
-    messageValidation.style.display = "block"
-    
-
-  }
-}
-
-formulaire.addEventListener('submit', validate ());
+closeConfirmation.addEventListener("click", function(){
+ messageValidation.style.display="none"
+ formulaire.reset();
+ 
+ 
+})

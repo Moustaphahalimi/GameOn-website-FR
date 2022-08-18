@@ -530,18 +530,44 @@ footer {
 
 /*Message de confirmation du traitement du formulaire*/
 
-.messagevalidation{
-  z-index: 1;
+.messagevalidation {
+  z-index: 3;
   position: absolute;
-  transform: translate(455px,70px);
+  transform: translate(455px, 70px);
   align-items: center;
   max-width: 500px;
-  height:785px;
+  top: -50px;
+  right: 500px;
   background-color: #232323;
   border-radius: 10px;
   color: white;
-  display: flex;
+  display: none;
   justify-content: center;
   padding: 50px;
-  display:none;
+}
+
+#closeConfirmation{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: #e54858;
+  background-color: #232323;
+  border-radius: 5px;
+  border-color: #232323;
+  padding: 0px;
+}
+
+.alllocation{
+  border-radius: 10px;
+  padding: 5px;
+}
+  
+.conditions{
+    position: absolute;
+    margin-left: 36px;
+    font-size: 12px;
+    font-weight: normal;
+    transform: translateY(-15px);
+    width: max-content;
+    margin-left: 0;
 }

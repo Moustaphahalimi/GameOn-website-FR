@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/83c803fad9.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="topnav" id="myTopnav">
@@ -28,6 +29,12 @@
       </a>
     </div>
     </div>
+  </div>
+  <div class="messagevalidation">
+    <button id="closeConfirmation">
+      <i class="fa-solid fa-2x fa-rectangle-xmark"></i>
+    </button>
+    <span>Merci ! Votre réservation a été reçue.</span>
   </div>
     <main>
       <div class="hero-section">
@@ -51,9 +58,7 @@
           je m'inscris
         </button>
       </div>
-      <div class="messagevalidation">
-        <span>Merci ! Votre réservation a été reçue.</span>
-      </div>
+     
       <div class="bground">
         
         <div class="content">
@@ -62,9 +67,7 @@
             <form
             id="formulaire"
               name="reserve"
-              action="index.html"
               method="get"
-              onsubmit="return validate();"
             >
               <div
                 class="formData">
@@ -102,7 +105,7 @@
                 <label>Date de naissance</label><br>
                 <input
                   class="text-control"
-                  type="date"
+                  placeholder="jj/mm/aaaa"
                   id="birthdate"
                   name="birthdate"
                 /><br><span id="err_birthdate"></span>
@@ -114,10 +117,10 @@
               </div><span id="err_quantity"></span>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
-                class="formData">
+                class="formData alllocation">
                 <input
                   class="checkbox-input"
-                  type="checkbox"
+                  type="radio"
                   id="location1"
                   name="location"
                   value="New York"
@@ -128,7 +131,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="checkbox"
+                  type="radio"
                   id="location2"
                   name="location"
                   value="San Francisco"
@@ -139,7 +142,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="checkbox"
+                  type="radio"
                   id="location3"
                   name="location"
                   value="Seattle"
@@ -150,7 +153,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="checkbox"
+                  type="radio"
                   id="location4"
                   name="location"
                   value="Chicago"
@@ -161,7 +164,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="checkbox"
+                  type="radio"
                   id="location5"
                   name="location"
                   value="Boston"
@@ -172,7 +175,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="checkbox"
+                  type="radio"
                   id="location6"
                   name="location"
                   value="Portland"
@@ -193,13 +196,13 @@
                 />
                 <label class="checkbox2-label" for="checkbox1" id="chekbox1" required>
                   <span class="checkbox-icon"></span>
-                  J'ai lu et accepté les conditions d'utilisation.
+                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span><br>
-                  Je Je souhaite être prévenu des prochains évènements.
+                  <span class="conditions"> Je Je souhaite être prévenu des prochains évènements.</span> 
                 </label>
                 <br>
                 <span id="err_checkbox1"></span><br>
@@ -209,6 +212,7 @@
                 type="submit"
                 class="button"
                 value="C'est parti"
+                
               />
             </form>
           </div>
