@@ -171,12 +171,12 @@ formulaire.addEventListener("submit", function (event) {
 
   }
 
-
   if(formValide == true){ 
   messageValidation.style.display = "block"
   modalbg.style.display = 'none'}
    
 });
+
 
 closeConfirmation.addEventListener("click", function(){
  messageValidation.style.display="none"

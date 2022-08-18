@@ -479,6 +479,22 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
+
+.alllocation{
+  border-radius: 10px;
+  padding: 5px;
+}
+  
+.conditions{
+    position: absolute;
+    margin-left: 36px;
+    font-size: 12px;
+    font-weight: normal;
+    transform: translateY(-15px);
+    width: max-content;
+    margin-left: 0;
+}
+
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;
@@ -528,6 +544,8 @@ footer {
   }
 }
 
+
+
 /*Message de confirmation du traitement du formulaire*/
 
 .messagevalidation {
@@ -557,17 +575,3 @@ footer {
   padding: 0px;
 }
 
-.alllocation{
-  border-radius: 10px;
-  padding: 5px;
-}
-  
-.conditions{
-    position: absolute;
-    margin-left: 36px;
-    font-size: 12px;
-    font-weight: normal;
-    transform: translateY(-15px);
-    width: max-content;
-    margin-left: 0;
-}
