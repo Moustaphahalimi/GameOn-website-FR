@@ -34,6 +34,7 @@ var err_birthdate = document.getElementById("err_birthdate")
 var err_nbOfTournement = document.getElementById("err_quantity")
 var err_checkbox1 = document.getElementById("err_checkbox1")
 var err_location= document.getElementById("err_location")
+
 var regexEmail = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
 var regexBirthdate = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/
 
@@ -68,7 +69,7 @@ formulaire.addEventListener("submit", function (event) {
   } 
   else{
     err_firstName.style.display= "none"
-    firstName.style.border = "3px green solid"
+    firstName.style.border = "none"
   }
   
  
@@ -84,7 +85,7 @@ formulaire.addEventListener("submit", function (event) {
   }
   else{
     err_lastName.style.display= "none"
-    lastName.style.border= "green 3px solid"
+    lastName.style.border= "none"
 
   }
 
@@ -102,7 +103,7 @@ formulaire.addEventListener("submit", function (event) {
   }
   else{
     err_email.style.display= "none"
-    email.style.border= "green 3px solid"
+    email.style.border= "none"
   }
 
 
@@ -118,7 +119,7 @@ formulaire.addEventListener("submit", function (event) {
 
   }
   else{
-    birthdate.style.border = "green 3px solid"
+    birthdate.style.border = "none"
     err_birthdate.style.display = "none"
   }
 
@@ -134,7 +135,7 @@ formulaire.addEventListener("submit", function (event) {
   }
   else{
     err_nbOfTournement.style.display= "none"
-    nbOfTournement.style.border= "green 3px solid" 
+    nbOfTournement.style.border= "none" 
 
   }
 
@@ -151,8 +152,7 @@ formulaire.addEventListener("submit", function (event) {
   }
   else{
     err_location.style.display= "none"
-    alllocation.style.border= "green 3px solid"
-
+    alllocation.style.border= "none"
   }
 
 
@@ -167,7 +167,7 @@ formulaire.addEventListener("submit", function (event) {
   }
   else{
     err_checkbox1.style.display= "none"
-    checkbox1.style.border= "green 3px solid"
+    checkbox1.style.border= "none"
 
   }
 
