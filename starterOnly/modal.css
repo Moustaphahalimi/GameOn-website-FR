@@ -549,29 +549,43 @@ footer {
 /*Message de confirmation du traitement du formulaire*/
 
 .messagevalidation {
-  z-index: 3;
-  position: absolute;
-  transform: translate(455px, 70px);
+  z-index: 999;
+  
   align-items: center;
-  max-width: 500px;
-  top: -50px;
-  right: 500px;
   background-color: #232323;
   border-radius: 10px;
   color: white;
   display: none;
+  flex-direction: column-reverse;
   justify-content: center;
   padding: 50px;
 }
 
 #closeConfirmation{
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  color: #e54858;
-  background-color: #232323;
-  border-radius: 5px;
-  border-color: #232323;
+  color: white;
+  background-color: #e54858;
+  border-radius: 10px;
+  border: none;
   padding: 0px;
+  transform: translate(0px, 70px);
+  padding: 10px 60px;
+  margin-top: 175px;
 }
 
+.messagecontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  position: absolute;
+}
+
+.messagevalidation span{
+  margin-top: 175px;
+  font-size: 28px;
+text-align: center;
+}
+
+/*.formulaire, .formData, .btn-submit, .text-label{ 
+  display: none;
+}

@@ -14,6 +14,7 @@ const formData = document.querySelectorAll(".formData")
 const btnCloseModal = document.querySelector(".close")
 const messageValidation = document.querySelector(".messagevalidation")
 const closeConfirmation = document.getElementById('closeConfirmation')
+const btn_signup = document.querySelector('cconfirm')
 
 //input
 const firstName = document.getElementById("first")
@@ -49,6 +50,9 @@ function launchModal() {
 // Close 
 btnCloseModal.addEventListener("click", function(){
   modalbg.style.display = "none"
+  messageValidation.style.display="none"
+  formulaire.style.display = 'block'
+  formulaire.reset();
 })
 
 
@@ -172,15 +176,19 @@ formulaire.addEventListener("submit", function (event) {
   }
 
   if(formValide == true){ 
-  messageValidation.style.display = "block"
-  modalbg.style.display = 'none'}
+  messageValidation.style.display = "flex"
+  formulaire.style.display = 'none'}
+  console.log("je passe par la ");
    
 });
 
 
 closeConfirmation.addEventListener("click", function(){
- messageValidation.style.display="none"
+messageValidation.style.display ="none"
+formulaire.style.display = 'block'
+ modalbg.style.display="none"
  formulaire.reset();
  
  
 })
+
