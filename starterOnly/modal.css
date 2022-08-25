@@ -570,6 +570,7 @@ footer {
   transform: translate(0px, 70px);
   padding: 10px 60px;
   margin-top: 175px;
+  cursor: pointer;
 }
 
 .messagecontainer{
